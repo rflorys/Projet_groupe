@@ -9,21 +9,30 @@ def lance_de():
     return random.randint(1, 6)
 
 
-for i in range(3): 
-    print(generer_niveau())
+salle = generer_niveau()
+print(salle)
 
-def traverse_niveau(niveau):
+#for i in range(3): 
+#    print(generer_niveau())
+
+def dungeon(salle):
     vie = 1
-    for o in niveau:
-        if niveau == 0: #Salle sans ennemi
+    for o in salle:
+        if o == 0: #Salle sans ennemi
             print("La salle est vide")
         else: #Salle avec un ennemi 
-            if lance_de in [1, 2, 3]:
+            de = 0
+            de = lance_de()
+            print(de)
+            if de in [1, 2, 3]:
                 vie -= 1
-                print(vie)
-                
+                print("Votre vie a atteint ",vie)
+                return False
             else:
-                print("Bravo (la traversée du niveau a été réussie)") 
+                print("Bravo (la traversée du niveau a été réussie)")
+
+dungeon(salle)
+
 
                 
 
